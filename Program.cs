@@ -14,8 +14,7 @@ var builder = Host.CreateDefaultBuilder(args)
             var cosmosConnectionString = config.GetValue<string>("CosmosDB:ConnectionString")
                 ?? throw new InvalidOperationException("Cosmos DB connection string not configured.");
             Console.WriteLine("cosmosConnectionString:" + cosmosConnectionString);
-            //var cosmosConnectionString = "AccountEndpoint=https://documentdatabaseaccount.documents.azure.com:443/;AccountKey=swfkGTH7sGjoKGpB2Z2ADpaW7TRiIjgfUKgaDVHcYW9P8xx2bkOdDGAOGlivFqgGadDbqfLAS8TTACDbOzj4Zw==;";
-            return new CosmosClient(cosmosConnectionString);
+           return new CosmosClient(cosmosConnectionString);
         });
     })
     .Build();

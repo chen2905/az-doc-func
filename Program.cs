@@ -13,7 +13,6 @@ var builder = Host.CreateDefaultBuilder(args)
             var config = sp.GetRequiredService<IConfiguration>();
             var cosmosConnectionString = config.GetValue<string>("CosmosDB:ConnectionString")
                 ?? throw new InvalidOperationException("Cosmos DB connection string not configured.");
-            Console.WriteLine("cosmosConnectionString:" + cosmosConnectionString);
            return new CosmosClient(cosmosConnectionString);
         });
     })
